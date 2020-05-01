@@ -1,6 +1,9 @@
 # basilisk-docker
 
 This package creates a Docker implementation of basilisk. Dockerfiles to build the container and a shell script to run it are provided.
+The difference compared to the original dockerfile [provided by sgllewellynsmith](https://github.com/sgllewellynsmith/basilisk-docker) are that
+I don't install GUI applications in the docker container (such as gv, evince, etc.), and this docker file is based on my base docker file
+which has Python 3.8 Anaconda and TeXLive 2020. If you don't need those, and wish to use GUI apps, use sgllewellynsmith version instead.
 
 # Usage
 

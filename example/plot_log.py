@@ -21,6 +21,7 @@ latex_style_cm = RcParams(
         "grid.color": [0.5] * 3,
     }
 )
+plt.style.use(latex_style_cm)
 
 # Loading data
 log_data = pd.read_csv("log", sep=" ").to_numpy()
@@ -33,4 +34,6 @@ plt.figure()
 plt.plot(t, depth_min, "-", label="min")
 plt.plot(t, depth_max, "-", label="max")
 plt.legend()
+plt.xlabel("Time")
+plt.ylabel("Depth")
 plt.savefig("log.pdf")

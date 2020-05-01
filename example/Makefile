@@ -11,8 +11,9 @@ out.ppm: bump
 out.mp4: out.ppm
 	ffmpeg -i out.ppm -an -vcodec libx264 -crf 23 out.mp4
 
-log.pdf: out.ppm
+# I use Python instead of gnuplot to make the plot
+log.pdf: log plot_log.py
 	source ../docker_alias.sh && python plot_log.py
 
 clean:
-	rm -f log log.pdf out.mp4 out.ppm
+	rm -f log log.pdf out.mp4 out.ppm bump
