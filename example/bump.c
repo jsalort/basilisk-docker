@@ -1,3 +1,9 @@
+/*
+ * This is the example from the tutorial at
+ * http://basilisk.fr/Tutorial
+ *
+ */
+
 #include "saint-venant.h"
 
 event graphs (i++) {

@@ -5,9 +5,10 @@ The difference compared to the original dockerfile [provided by sgllewellynsmith
 I don't install GUI applications in the docker container (such as gv, evince, etc.), and this docker file is based on my base docker file
 which has Python 3.8 Anaconda and TeXLive 2020. If you don't need those, and wish to use GUI apps, use sgllewellynsmith version instead.
 
-# Usage
+# Installation and Usage
 
-Simply source the `docker_alias.sh` file, e.g.
+No particular compilation is required since this docker file is published on [DockerHub](https://hub.docker.com/repository/docker/jsalort/basilisk).
+To use it, simply source the `docker_alias.sh` file, e.g.
 
 ```bash
 $ source docker_alias.sh
