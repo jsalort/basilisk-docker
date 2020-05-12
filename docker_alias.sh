@@ -31,9 +31,6 @@ pre-commit() {
 }
 
 alias git='docker run -it --rm -v ${PWD}:/home/liveuser/workdir -v ${HOME}/.gitconfig:/home/liveuser/.gitconfig -w /home/liveuser/workdir jsalort/basilisk:latest git'
-#git() {
-#	docker run -it --rm -v ${PWD}:/home/liveuser/workdir -v ${HOME}/.gitconfig:/home/liveuser/.gitconfig -w /home/liveuser/workdir jsalort/basilisk:latest git $@
-#}
 
 # Texlive
 pdflatex() {
