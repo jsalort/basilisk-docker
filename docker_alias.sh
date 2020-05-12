@@ -1,3 +1,21 @@
+#!/bin/bash
+
+# Make sure git, ipython, jupyterlab, lualatex, pdflatex, pre-commit, python are not aliases
+alias git=''
+unalias git
+alias ipython=''
+unalias ipython
+alias jupyterlab=''
+unalias jupyterlab
+alias lualatex=''
+unalias lualatex
+alias pdflatex=''
+unalias pdflatex
+alias pre-commit=''
+unalias pre-commit
+alias python=''
+unalias python
+
 # Python
 ipython() {
 	docker run -it --rm -v ${PWD}:/home/liveuser/workdir -w /home/liveuser/workdir jsalort/basilisk:latest ipython $@
@@ -11,9 +29,11 @@ jupyterlab() {
 pre-commit() {
 	docker run -it --rm -v ${PWD}:/home/liveuser/workdir -w /home/liveuser/workdir jsalort/basilisk:latest pre-commit $@
 }
-git() {
-	docker run -it --rm -v ${PWD}:/home/liveuser/workdir -v ${HOME}/.gitconfig:/home/liveuser/.gitconfig -w /home/liveuser/workdir jsalort/basilisk:latest git $@
-}
+
+alias git='docker run -it --rm -v ${PWD}:/home/liveuser/workdir -v ${HOME}/.gitconfig:/home/liveuser/.gitconfig -w /home/liveuser/workdir jsalort/basilisk:latest git'
+#git() {
+#	docker run -it --rm -v ${PWD}:/home/liveuser/workdir -v ${HOME}/.gitconfig:/home/liveuser/.gitconfig -w /home/liveuser/workdir jsalort/basilisk:latest git $@
+#}
 
 # Texlive
 pdflatex() {
@@ -32,4 +52,9 @@ qcc() {
 # run_program "./bump > out.ppm"
 run_program() {
     docker run -it --rm -v ${PWD}:/home/liveuser/workdir -w /home/liveuser/workdir jsalort/basilisk:latest bash -c "$@"
+}
+
+# ffmpeg
+ffmpeg() {
+    docker run -it --rm -v ${PWD}:/home/liveuser/workdir -w /home/liveuser/workdir jsalort/basilisk:latest ffmpeg $@
 }

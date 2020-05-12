@@ -9,7 +9,7 @@ out.ppm: bump
 	source ../docker_alias.sh && run_program "./bump > out.ppm 2> log"
 
 out.mp4: out.ppm
-	ffmpeg -i out.ppm -an -vcodec libx264 -crf 23 out.mp4
+	source ../docker_alias.sh && ffmpeg -i out.ppm -an -vcodec libx264 -crf 23 out.mp4
 
 # I use Python instead of gnuplot to make the plot
 log.pdf: log plot_log.py
